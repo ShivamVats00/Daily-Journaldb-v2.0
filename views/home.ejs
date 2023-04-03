@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+<h3>
+  "Share your thoughts and ideas with the world by writing a blog post! Your voice matters and can inspire others.
+   Click the 'Write a Blog' button to get started and start creating your masterpiece today."
+</h3>
+<a href="/compose"><button class="glow-on-hover" type="button">Write a Blog</button></a>
+
+<% posts.forEach(function(post){ %>
+<h1><%=post.title%></h1>
+<p><%=post.content.substring(0, 100) + "...."%>
+  <a href="/posts/<%=post.title%>">Read More</a>
+</p>
+
+<%});%>
+
+<%- include("partials/footer"); -%>
